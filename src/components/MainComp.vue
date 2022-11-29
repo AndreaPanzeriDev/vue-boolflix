@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FilmList />
+    <FilmList :arrayFilmFull="arrayFilmFull"/>
     <SerieList />
   </div>
 </template>
@@ -15,6 +15,10 @@ export default {
     FilmList,
     SerieList,
   },
+  props:{
+    //array with all the specific in App.vue
+    arrayFilmFull: Array,
+  }
 };
 </script>
 

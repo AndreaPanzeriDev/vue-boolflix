@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <CardComp/>
+  <div id="cards">
+    <CardComp v-for="(elem, index) in arrayFilmFull" :key="index" :singleItem="elem"/>
   </div>
 </template>
 
@@ -12,10 +12,16 @@ export default {
     name: 'FilmList',
     components:{
         CardComp
+    },
+    props:{
+      arrayFilmFull: Array
     }
 }
 </script>
 
 <style>
-
+#cards{
+  width: 95%;
+  margin: auto;
+}
 </style>

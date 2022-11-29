@@ -1,13 +1,35 @@
 <template>
-  <div></div>
+  <div class="card">
+    <img
+      :src="`http://image.tmdb.org/t/p/w342/${singleItem.poster_path}`"
+      alt="poster"
+    />
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'CardComp',
-}
+  name: "CardComp",
+  props: {
+    singleItem: Object,
+  },
+};
 </script>
 
-<style>
+<style scoped>
+.card {
+  height: 300px;
+  background-color: rgb(116, 115, 115);
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% / 8 - 5px);
+  margin: 0 2.5px;
+
+}
+
+.card > img{
+  max-width: 100%;
+}
+
 
 </style>
