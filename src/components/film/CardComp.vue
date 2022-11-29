@@ -18,12 +18,12 @@ export default {
 
 <style scoped>
 .card {
-  height: 300px;
+  height: auto;
   background-color: rgb(116, 115, 115);
   display: flex;
   flex-wrap: wrap;
   width: calc(100% / 8 - 5px);
-  margin: 0 2.5px;
+  margin: 2.5px;
 
 }
 
