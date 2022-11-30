@@ -1,15 +1,12 @@
 <template>
   <div class="card">
-    <div class="thefront">
-      <img
-        :src="`http://image.tmdb.org/t/p/w342/${singleItem.poster_path}`"
-        alt="poster"
-      />
-    </div>
+    <img
+      class="poster"
+      :src="`http://image.tmdb.org/t/p/w342/${singleItem.poster_path}`"
+      alt="poster"
+    />
     <div class="theback">
-      <div class="content">
-        <div>ciao</div>
-      </div>
+
     </div>
   </div>
 </template>
@@ -24,42 +21,23 @@ export default {
 </script>
 
 <style scoped>
-
 /***************
       CARD
 ****************/
-.card{
+.card {
   width: calc(100% / 8 - 5px);
   margin: 2.5px;
   height: auto;
-}
-
-
-/***************
-    THE FRONT
-****************/
-
-.thefront{
   position: relative;
-  visibility: visible;
 }
 
-.thefront > img {
-  max-width: 100%;  
+.card > img{
+  max-width: 100%;
+  display: block;
 }
 
-.thefront:hover img{
-  visibility: hidden;
-}
-
-
-/***************
-    THE BACK
-****************/
-.theback{
+.card:hover img{
   display: none;
 }
-
-
 
 </style>
