@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Films</h2>
+    <h2 class="text-white">Films</h2>
     <div id="cards">
       <CardComp
         v-for="(elem, index) in arrayFilmFull"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Serie Tv</h2>
+    <h2 class="text-white">Serie Tv</h2>
     <div id="cards">
       <CardComp
         v-for="(elem, index) in arraySeriesFull"
