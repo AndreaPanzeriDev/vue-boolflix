@@ -1,26 +1,32 @@
 <template>
-  <div id="cards">
-    <CardComp v-for="(elem, index) in arraySeriesFull" :key="index" :singleItem="elem"/>
+  <div>
+    <h2>Serie Tv</h2>
+    <div id="cards">
+      <CardComp
+        v-for="(elem, index) in arraySeriesFull"
+        :key="index"
+        :singleItem="elem"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-
-import CardComp from './CardComp.vue'
+import CardComp from "./CardComp.vue";
 
 export default {
-    name: 'SerieList',
-    components:{
-        CardComp
-    },
-    props:{
-      arraySeriesFull: Array
-    }
-}
+  name: "SerieList",
+  components: {
+    CardComp,
+  },
+  props: {
+    arraySeriesFull: Array,
+  },
+};
 </script>
 
 <style>
-#cards{
+#cards {
   width: 95%;
   margin: auto;
   display: flex;
