@@ -1,9 +1,16 @@
 <template>
   <div class="card">
-    <img
-      :src="`http://image.tmdb.org/t/p/w342/${singleItem.poster_path}`"
-      alt="poster"
-    />
+    <div class="thefront">
+      <img
+        :src="`http://image.tmdb.org/t/p/w342/${singleItem.poster_path}`"
+        alt="poster"
+      />
+    </div>
+    <div class="theback">
+      <div class="content">
+        <div>ciao</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,19 +24,42 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  height: auto;
-  background-color: rgb(116, 115, 115);
-  display: flex;
-  flex-wrap: wrap;
+
+/***************
+      CARD
+****************/
+.card{
   width: calc(100% / 8 - 5px);
   margin: 2.5px;
-
+  height: auto;
 }
 
-.card > img{
-  max-width: 100%;
+
+/***************
+    THE FRONT
+****************/
+
+.thefront{
+  position: relative;
+  visibility: visible;
 }
+
+.thefront > img {
+  max-width: 100%;  
+}
+
+.thefront:hover img{
+  visibility: hidden;
+}
+
+
+/***************
+    THE BACK
+****************/
+.theback{
+  display: none;
+}
+
 
 
 </style>
