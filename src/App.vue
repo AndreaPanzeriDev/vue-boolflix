@@ -54,8 +54,11 @@ export default {
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;color: #2c3e50;
   box-sizing: border-box;
 }
 
+html,
+#app{
+  background-color: #141414;
+}
 </style>

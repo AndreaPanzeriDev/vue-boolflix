@@ -9,13 +9,18 @@
     </div>
     <div class="theback">
       <!--title-->
-      <div class="d-flex text-white"><span class="fw-bold">Titolo: </span><span>{{singleItem.title}}</span></div>
+      <div class="d-flex text-white">
+        <span class="fw-bold">Titolo: </span><span>{{ singleItem.title }}</span>
+      </div>
       <!--score-->
       <div class="d-flex text-white">
         <span class="fw-bold">Voto:</span>
       </div>
       <!--overview-->
-      <div class="d-flex text-white"><span class="fw-bold">Overview:</span>{{singleItem.overview}}<span></span></div>
+      <div class="d-flex text-white">
+        <span class="fw-bold">Overview:</span>{{ singleItem.overview
+        }}<span></span>
+      </div>
     </div>
   </div>
 </template>
@@ -36,18 +41,25 @@ export default {
 .card {
   width: calc(100% / 6 - 5px);
   margin: 2.5px;
-  height: 300px;
+  height: auto;
   position: relative;
   overflow-y: scroll;
   transition: transform 1500ms;
   transform-style: preserve-3d;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-.card:hover{
+/* Hide scrollbar for Chrome, Safari and Opera */
+.card::-webkit-scrollbar {
+    display: none;
+}
+
+.card:hover {
   transform: rotateY(180deg);
 }
 
-.card > .thefront >img {
+.card > .thefront > img {
   max-width: 100%;
   display: block;
 }
@@ -60,11 +72,11 @@ export default {
     THE FRONT
 *********************/
 
-.thefront{
+.thefront {
   height: 100%;
 }
 
-.card:hover .thefront{
+.card:hover .thefront {
   display: none;
 }
 
@@ -72,9 +84,9 @@ export default {
       THE BACK
 *********************/
 
-.theback{
+.theback {
   transform: rotateY(180deg);
-  height: auto;
+  height: 100%;
 }
 
 .card:hover .theback {
