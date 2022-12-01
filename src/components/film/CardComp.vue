@@ -15,7 +15,7 @@
       <!--flag-->
       <div v-if="languages.includes(singleItem.original_language)">
         <img
-          :src="`../flags/${singleItem.original_language}.svg`"
+          :src="`../../../public/${singleItem.original_language}.svg`"
           alt="language"
         />
       </div>
