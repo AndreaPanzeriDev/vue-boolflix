@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-white">Serie Tv</h2>
+    <h2 class="text-white">Tv Series</h2>
     <div id="cards">
       <CardComp
         v-for="(elem, index) in arraySeriesFull"
@@ -15,7 +15,7 @@
 import CardComp from "./CardComp.vue";
 
 export default {
-  name: "SerieList",
+  name: "FilmList",
   components: {
     CardComp,
   },
@@ -26,5 +26,22 @@ export default {
 </script>
 
 <style scoped>
+#cards {
+  width: 95%;
+  margin: auto;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
+#cards:hover{
+  -ms-overflow-style: auto; /* IE and Edge */
+  scrollbar-width: auto; /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+#cards::-webkit-scrollbar {
+  display: none;
+}
 </style>
