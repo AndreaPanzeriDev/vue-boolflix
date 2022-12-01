@@ -13,9 +13,11 @@
         <span class="fw-bold text-center">{{ singleItem.title }}</span>
       </div>
       <!--flag-->
-      <div class="text-center"
-      v-if=""
-      >
+      <div v-if="languages.includes(singleItem.original_language)">
+        <img
+          :src="`../flags/${singleItem.original_language}.svg`"
+          alt="language"
+        />
       </div>
       <!--score-->
       <div class="d-flex text-white">
@@ -25,8 +27,16 @@
       </div>
       <!--score in stars image-->
       <div class="d-flex stars">
-        <i class="fa-solid fa-star"  v-for="(index) in this.stars" :key='index'></i>
-        <i class="fa-solid fa-star text-dark"  v-for="(index) in 5 - this.stars" :key='index'></i>
+        <i
+          class="fa-solid fa-star"
+          v-for="index in this.stars"
+          :key="index"
+        ></i>
+        <i
+          class="fa-solid fa-star text-dark"
+          v-for="index in 5 - this.stars"
+          :key="index"
+        ></i>
       </div>
     </div>
   </div>
@@ -38,11 +48,11 @@ export default {
   props: {
     singleItem: Object,
   },
-  data(){
-    return{
-      stars: Math.ceil((this.singleItem.vote_average / 2)),
-      languages: ['cn', 'de', 'en', 'fr', 'it', 'ja', 'nl', 'pl', 'pt']
-    }
+  data() {
+    return {
+      stars: Math.ceil(this.singleItem.vote_average / 2),
+      languages: ["cn", "de", "en", "fr", "it", "ja", "nl", "pl", "pt"],
+    };
   },
 };
 </script>
@@ -109,13 +119,11 @@ export default {
       STARS
 *********************/
 
-.stars{
+.stars {
   justify-content: center;
 }
-.stars *{
+.stars * {
   color: gold;
 }
-
-
 </style>
 Footer
