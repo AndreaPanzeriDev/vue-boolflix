@@ -12,6 +12,11 @@
       <div class="d-flex text-white">
         <span class="fw-bold text-center">{{ singleItem.title }}</span>
       </div>
+      <!--flag-->
+      <div class="text-center"
+      v-if=""
+      >
+      </div>
       <!--score-->
       <div class="d-flex text-white">
         <span class="fw-bold text-center fs-3 text-success mx-auto"
@@ -35,7 +40,8 @@ export default {
   },
   data(){
     return{
-      stars: Math.ceil((this.singleItem.vote_average / 2))
+      stars: Math.ceil((this.singleItem.vote_average / 2)),
+      languages: ['cn', 'de', 'en', 'fr', 'it', 'ja', 'nl', 'pl', 'pt']
     }
   },
 };
