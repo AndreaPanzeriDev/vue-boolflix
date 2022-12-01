@@ -9,16 +9,20 @@
     </div>
     <div class="theback">
       <!--title-->
-      <div class="d-flex text-white">
-        <span class="fw-bold text-center">{{ singleItem.title }}</span>
+      <div class="text-white content">
+        <div class="fw-bold text-center">{{ singleItem.title }}</div>
       </div>
       <!--flag-->
-      <div v-if="languages.includes(singleItem.original_language)">
+      <div>
         <img
-          :src="`../../../public/${singleItem.original_language}.svg`"
-          alt="language"
+          v-if="languages.includes(singleItem.original_language)"
+          :src="`../../../public/flags/${singleItem.original_language}.svg`"
+          alt="flag"
+          class="flag"
         />
+        <span v-else>Original Lang: {{singleItem.original_language}}</span>
       </div>
+
       <!--score-->
       <div class="d-flex text-white">
         <span class="fw-bold text-center fs-3 text-success mx-auto"
@@ -51,7 +55,7 @@ export default {
   data() {
     return {
       stars: Math.ceil(this.singleItem.vote_average / 2),
-      languages: ["cn", "de", "en", "fr", "it", "ja", "nl", "pl", "pt"],
+      languages: ['en', 'it', 'fr', 'es', 'de']
     };
   },
 };
@@ -62,12 +66,12 @@ export default {
       CARD
 ****************/
 .card {
-  width: calc(100% / 6 - 5px);
-  margin: 2.5px;
-  height: auto;
-  position: relative;
+  display: inline-block;
+  width: 209px;
+  height: 314px;
   transition: transform 1500ms;
   transform-style: preserve-3d;
+  position: relative;
 }
 
 .card:hover {
@@ -75,7 +79,7 @@ export default {
 }
 .card > .thefront > img {
   max-width: 100%;
-  display: block;
+  display: inline-block;
 }
 .card:hover img {
   display: none;
@@ -94,9 +98,9 @@ export default {
 *********************/
 
 .card:hover .theback {
-  display: block;
-  background-color: black;
-  opacity: 0.8;
+  display: inline-block;
+  background-color: rgb(137, 137, 137);
+  max-height: 100%;
 }
 .theback {
   display: none;
@@ -107,7 +111,9 @@ export default {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   transform: rotateY(180deg);
-  height: 100%;
+  max-width: 209px;
+  height: 314px;
+  padding: 5px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -119,11 +125,25 @@ export default {
       STARS
 *********************/
 
+.flag {
+  height: 54px;
+  width: 70px;
+}
+
+/*******************
+      STARS
+*********************/
+
 .stars {
   justify-content: center;
 }
 .stars * {
   color: gold;
+}
+
+
+.content{
+  width: 200px;
 }
 </style>
 Footer

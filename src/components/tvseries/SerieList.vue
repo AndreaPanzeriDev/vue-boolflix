@@ -25,11 +25,6 @@ export default {
 };
 </script>
 
-<style>
-#cards {
-  width: 95%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
+<style scoped>
+
 </style>

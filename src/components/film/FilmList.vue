@@ -25,11 +25,23 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #cards {
   width: 95%;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#cards:hover{
+  -ms-overflow-style: auto; /* IE and Edge */
+  scrollbar-width: auto; /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+#cards::-webkit-scrollbar {
+  display: none;
 }
 </style>
