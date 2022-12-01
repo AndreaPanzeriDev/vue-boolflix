@@ -10,16 +10,11 @@
     <div class="theback">
       <!--title-->
       <div class="d-flex text-white">
-        <span class="fw-bold">Titolo: </span><span>{{ singleItem.title }}</span>
+        <span class="fw-bold text-center">{{ singleItem.title }}</span>
       </div>
       <!--score-->
       <div class="d-flex text-white">
-        <span class="fw-bold">Voto:</span>
-      </div>
-      <!--overview-->
-      <div class="d-flex text-white">
-        <span class="fw-bold">Overview:</span>{{ singleItem.overview
-        }}<span></span>
+        <span class="fw-bold text-center fs-3 text-success mx-auto">{{singleItem.vote_average}}/10</span>
       </div>
     </div>
   </div>
