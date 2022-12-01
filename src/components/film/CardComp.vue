@@ -43,59 +43,53 @@ export default {
   margin: 2.5px;
   height: auto;
   position: relative;
-  overflow-y: scroll;
   transition: transform 1500ms;
   transform-style: preserve-3d;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.card::-webkit-scrollbar {
-    display: none;
 }
 
 .card:hover {
   transform: rotateY(180deg);
 }
-
 .card > .thefront > img {
   max-width: 100%;
   display: block;
 }
-
 .card:hover img {
   display: none;
 }
-
 /*******************
     THE FRONT
 *********************/
-
 .thefront {
   height: 100%;
 }
-
 .card:hover .thefront {
   display: none;
 }
-
 /*******************
       THE BACK
 *********************/
-
-.theback {
-  transform: rotateY(180deg);
-  height: 100%;
-}
 
 .card:hover .theback {
   display: block;
   background-color: black;
   opacity: 0.8;
 }
-
 .theback {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  transform: rotateY(180deg);
+  height: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.theback::-webkit-scrollbar {
   display: none;
 }
 </style>
+Footer
