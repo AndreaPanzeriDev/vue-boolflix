@@ -18,6 +18,11 @@
           >{{ singleItem.vote_average }}/10</span
         >
       </div>
+      <!--score in stars image-->
+      <div class="d-flex stars">
+        <i class="fa-solid fa-star"  v-for="(index) in this.stars" :key='index'></i>
+        <i class="fa-solid fa-star text-dark"  v-for="(index) in 5 - this.stars" :key='index'></i>
+      </div>
     </div>
   </div>
 </template>
@@ -30,15 +35,9 @@ export default {
   },
   data(){
     return{
-      stars: 0,
+      stars: Math.ceil((this.singleItem.vote_average / 2))
     }
   },
-  methods:{
-    getStars(){
-      const score = {{this.singleItem.vote_average}},
-      this.stars = Math.ceil(score)
-    }
-  }
 };
 </script>
 
@@ -99,5 +98,18 @@ export default {
 .theback::-webkit-scrollbar {
   display: none;
 }
+
+/*******************
+      STARS
+*********************/
+
+.stars{
+  justify-content: center;
+}
+.stars *{
+  color: gold;
+}
+
+
 </style>
 Footer
