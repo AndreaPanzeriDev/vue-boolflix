@@ -14,7 +14,9 @@
       </div>
       <!--score-->
       <div class="d-flex text-white">
-        <span class="fw-bold text-center fs-3 text-success mx-auto">{{singleItem.vote_average}}/10</span>
+        <span class="fw-bold text-center fs-3 text-success mx-auto"
+          >{{ singleItem.vote_average }}/10</span
+        >
       </div>
     </div>
   </div>
@@ -26,6 +28,17 @@ export default {
   props: {
     singleItem: Object,
   },
+  data(){
+    return{
+      stars: 0,
+    }
+  },
+  methods:{
+    getStars(){
+      const score = {{this.singleItem.vote_average}},
+      this.stars = Math.ceil(score)
+    }
+  }
 };
 </script>
 
