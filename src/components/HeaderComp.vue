@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div>
+  <div id="header">
+    <img src="./Logonetflix.png" alt="logo">
+    <div class="align-self-center">
       <input type="text" v-model="textToSearch" placeholder="Insert a title" @keyup="sendTextFilm">
     </div>
-    
   </div>
 </template>
 
@@ -29,6 +29,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+#header{
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+}
 </style>
