@@ -14,20 +14,13 @@
       </div>
       <!--flag-->
       <div>
-        <img
-          v-if="languages.includes(singleItem.original_language)"
-          :src="`../../../public/flags/${singleItem.original_language}.svg`"
-          alt="flag"
-          class="flag"
-        />
-        <span v-else>Original Lang: {{singleItem.original_language}}</span>
+       <span>{{ singleItem.original_language }}</span>
       </div>
 
       <!--score-->
       <div class="d-flex text-white">
         <span class="fw-bold text-center fs-3 text-success mx-auto"
-          >{{ singleItem.vote_average }}/10</span
-        >
+          >{{ singleItem.vote_average }}/10</span>
       </div>
       <!--score in stars image-->
       <div class="d-flex stars">
@@ -88,7 +81,7 @@ export default {
     THE FRONT
 *********************/
 .thefront {
-  height: 100%;
+  height: 314px;
 }
 .card:hover .thefront {
   display: none;
@@ -111,8 +104,7 @@ export default {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   transform: rotateY(180deg);
-  max-width: 209px;
-  height: 314px;
+  height: 310px;
   padding: 5px;
 }
 
