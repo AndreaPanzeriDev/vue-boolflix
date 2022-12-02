@@ -13,14 +13,25 @@
         <div class="fw-bold text-center">{{ singleItem.name }}</div>
       </div>
       <!--flag-->
-      <div>
-       <span>{{ singleItem.original_language }}</span>
+      <div class="text-center">
+        <img
+          v-if="languages != 'EN'"
+          :src="`https://www.countryflagicons.com/FLAT/32/${languages}.png`"
+          alt="flag"
+        />
+        <img
+          v-else
+          src="https://www.countryflagicons.com/FLAT/32/US.png"
+          alt="flag"
+          class="mx-auto"
+        />
       </div>
 
       <!--score-->
       <div class="d-flex text-white">
         <span class="fw-bold text-center fs-3 text-success mx-auto"
-          >{{ singleItem.vote_average }}/10</span>
+          >{{ singleItem.vote_average }}/10</span
+        >
       </div>
       <!--score in stars image-->
       <div class="d-flex stars">
@@ -48,7 +59,7 @@ export default {
   data() {
     return {
       stars: Math.ceil(this.singleItem.vote_average / 2),
-      languages: ['en', 'it', 'fr', 'es', 'de']
+      languages: this.singleItem.original_language.toUpperCase(),
     };
   },
 };
@@ -74,7 +85,7 @@ export default {
   max-width: 100%;
   display: inline-block;
 }
-.card:hover img {
+.card:hover > .thefront > img {
   display: none;
 }
 /*******************
@@ -93,6 +104,7 @@ export default {
 .card:hover .theback {
   display: inline-block;
   background-color: rgb(137, 137, 137);
+  max-width: 100%;
   max-height: 100%;
 }
 .theback {
@@ -133,8 +145,7 @@ export default {
   color: gold;
 }
 
-
-.content{
+.content {
   width: 200px;
 }
 </style>
