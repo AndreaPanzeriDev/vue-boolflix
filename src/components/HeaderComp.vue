@@ -2,7 +2,7 @@
   <div id="header">
     <img src="./Logonetflix.png" alt="logo">
     <div class="align-self-center">
-      <input type="text" v-model="textToSearch" placeholder="Insert a title" @keyup="sendTextFilm">
+      <input type="text" v-model="textToSearch" placeholder="Insert a title" @keyup.enter="sendTextFilm">
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
     },
     data(){
       return{
-        textToSearch: '',
+        textToSearch: 'p',
       }
     },
     mounted(){

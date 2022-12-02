@@ -72,6 +72,7 @@ export default {
   transition: transform 1500ms;
   transform-style: preserve-3d;
   position: relative;
+  border: none;
 }
 
 .card:hover {
@@ -88,7 +89,7 @@ export default {
     THE FRONT
 *********************/
 .thefront {
-  height: 100%;
+  height: 314px;
 }
 .card:hover .thefront {
   display: none;
@@ -100,7 +101,7 @@ export default {
 .card:hover .theback {
   display: inline-block;
   background-color: rgb(137, 137, 137);
-  max-height: 100%;
+  max-height: 314px;
 }
 .theback {
   display: none;
