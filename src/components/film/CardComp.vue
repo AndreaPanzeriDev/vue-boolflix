@@ -13,14 +13,18 @@
         <div class="fw-bold text-center">{{ singleItem.title }}</div>
       </div>
       <!--flag-->
-      <div>
+      <div class="text-center">
         <img
-          v-if="languages.includes(singleItem.original_language)"
-          :src="`../../../public/flags/${singleItem.original_language}.svg`"
+          v-if="languages != 'EN'"
+          :src="`https://www.countryflagicons.com/FLAT/32/${languages}.png`"
           alt="flag"
-          class="flag"
         />
-        <span v-else>Original Lang: {{singleItem.original_language}}</span>
+        <img
+          v-else
+          src="https://www.countryflagicons.com/FLAT/32/US.png"
+          alt="flag"
+          class="mx-auto"
+        />
       </div>
 
       <!--score-->
@@ -55,7 +59,7 @@ export default {
   data() {
     return {
       stars: Math.ceil(this.singleItem.vote_average / 2),
-      languages: ['en', 'it', 'fr', 'es', 'de']
+      languages: this.singleItem.original_language.toUpperCase(),
     };
   },
 };
@@ -82,7 +86,7 @@ export default {
   max-width: 100%;
   display: inline-block;
 }
-.card:hover img {
+.card:hover > .thefront > img {
   display: none;
 }
 /*******************
